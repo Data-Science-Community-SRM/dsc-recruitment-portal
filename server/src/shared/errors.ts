@@ -1,4 +1,4 @@
-export const ERRORS = {
+export default {
   INTERNAL_SERVER_ERROR: {
     statusCode: 500,
     message: {

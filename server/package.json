@@ -1,11 +1,12 @@
 {
   "name": "project-name-here",
   "version": "0.1.0",
+  "main": "build/index.ts",
   "private": true,
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./build/index.js\"",
-    "build": "tsc",
-    "start": "next start",
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsc --build",
+    "start": "node ./build/index.js",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
-    "tsc-watch": "^6.0.4"
+    "tsc-watch": "^6.0.4",
+    "tsx": "^4.19.0"
   }
 }

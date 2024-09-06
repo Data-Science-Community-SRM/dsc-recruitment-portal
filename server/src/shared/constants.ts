@@ -1,4 +1,4 @@
-export const CONSTANTS = {
+export default {
     STUDENT_REGISTER_SUCCESSFULLY: {
       code: 201,
       success: true,

@@ -1,3 +1,6 @@
+import { getTechnicalCollection } from "@/loaders/collections";
+import ERRORS from "@/shared/errors";
+
 export const registerTechnical = async (
   firstName: string,
   lastName: string,
@@ -6,13 +9,29 @@ export const registerTechnical = async (
   personalEmail: string,
   phoneNumber: string,
   department: string,
-  year: number
+  year: number,
+  github: string,
+  linkedin: string
 ) => {
-  const collection = await getWorkshopCollection();
+  const collection = await getTechnicalCollection();
   const student = await collection.findOne({ registrationNumber });
   if (student) {
-    
+    throw {
+      statusCode: ERRORS.STUDENT_ALREADY_REGISTERED.statusCode,
+      message: ERRORS.STUDENT_ALREADY_REGISTERED.message,
+    };
   }
-  // This function will be implemented in the next task
+  const data = await collection.insertOne({
+    firstName,
+    lastName,
+    srmEmail,
+    registrationNumber,
+    personalEmail,
+    phoneNumber,
+    department,
+    year,
+    github,
+    linkedin,
+  });
   return data;
 };
