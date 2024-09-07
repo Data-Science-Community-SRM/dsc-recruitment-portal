@@ -11,26 +11,28 @@ export const registerResearchHandler = async (
     const {
       firstName,
       lastName,
-      email,
+      srmemail,
+      personalemail(),
+      registationNumber(),
       phoneNumber,
-      researchArea,
-      experience,
-      publications,
-      linkedin,
+      department,
+      year,
+      github,
     } = req.body;
     await registerResearch(
-      firstName,
-      lastName,
-      email,
-      phoneNumber,
-      researchArea,
-      experience,
-      publications,
-      linkedin
+        firstName,
+        lastName,
+        srmemail,
+        personalemail,
+        registationNumber,
+        phoneNumber,
+        department,
+        year,
+        github
     );
-    res.status(CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.code).send({
-      success: CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.success,
-      message: CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.message,
+    res.status(CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.code).send({
+      success: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.success,
+      message: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.message,
     });
   } catch (error) {
     next(error);
