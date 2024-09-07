@@ -1,18 +1,17 @@
-import { getCreativeCollection } from "@/loaders/collections";
+import { getResearchCollection } from "@/loaders/collections";
 import ERRORS from "@/shared/errors";
 
-export const registerCreative = async (
+export const registerResearch = async (
   firstName: string,
   lastName: string,
   email: string,
   phoneNumber: string,
-  portfolioUrl: string,
-  department: string,
+  researchArea: string,
   experience: string,
-  creativeStatement: string,
+  publications: string,
   linkedin: string
 ) => {
-  const collection = await getCreativeCollection();
+  const collection = await getResearchCollection();
   const candidate = await collection.findOne({ email });
   if (candidate) {
     throw {
@@ -25,10 +24,9 @@ export const registerCreative = async (
     lastName,
     email,
     phoneNumber,
-    portfolioUrl,
-    department,
+    researchArea,
     experience,
-    creativeStatement,
+    publications,
     linkedin,
   });
   return data;

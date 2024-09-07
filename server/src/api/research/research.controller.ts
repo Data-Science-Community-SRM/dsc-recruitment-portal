@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
-import { registerCreative } from "./creative.services";
+import { registerResearch } from "./research.services";
 import CONSTANTS from "@/shared/constants";
 
-export const registerCreativeHandler = async (
+export const registerResearchHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -13,26 +13,24 @@ export const registerCreativeHandler = async (
       lastName,
       email,
       phoneNumber,
-      portfolioUrl,
-      department,
+      researchArea,
       experience,
-      creativeStatement,
+      publications,
       linkedin,
     } = req.body;
-    await registerCreative(
+    await registerResearch(
       firstName,
       lastName,
       email,
       phoneNumber,
-      portfolioUrl,
-      department,
+      researchArea,
       experience,
-      creativeStatement,
+      publications,
       linkedin
     );
-    res.status(CONSTANTS.CREATIVE_REGISTER_SUCCESSFULLY.code).send({
-        success: CONSTANTS.CREATIVE_REGISTER_SUCCESSFULLY.success,
-        message: CONSTANTS.CREATIVE_REGISTER_SUCCESSFULLY.message,
+    res.status(CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.code).send({
+      success: CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.success,
+      message: CONSTANTS.RESEARCH_REGISTER_SUCCESSFULLY.message,
     });
   } catch (error) {
     next(error);
