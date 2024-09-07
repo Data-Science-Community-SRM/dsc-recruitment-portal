@@ -12,24 +12,26 @@ export const registerResearchHandler = async (
       firstName,
       lastName,
       srmemail,
-      personalemail(),
-      registationNumber(),
+      personalemail,
+      registrationNumber,
       phoneNumber,
       department,
       year,
       github,
     } = req.body;
+
     await registerResearch(
-        firstName,
-        lastName,
-        srmemail,
-        personalemail,
-        registationNumber,
-        phoneNumber,
-        department,
-        year,
-        github
+      firstName,
+      lastName,
+      srmemail,
+      personalemail,
+      registrationNumber,
+      phoneNumber,
+      department,
+      year,
+      github
     );
+
     res.status(CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.code).send({
       success: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.success,
       message: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.message,

@@ -3,10 +3,11 @@ import { z } from "zod";
 export const ResearchSchema = z.object({
   firstName: z.string(),
   lastName: z.string(),
-  email: z.string().email(),
+  srmemail: z.string().email(),
+  perosnalemail: z.string().email(),
+  registrationNumber: z.string(),
   phoneNumber: z.string(),
-  researchArea: z.string(),
-  experience: z.string(),
-  publications: z.string().url().optional(),
-  linkedin: z.string().url().optional(),
+  department: z.string(),
+  year: z.string(),
+  github: z.string().url(),
 });

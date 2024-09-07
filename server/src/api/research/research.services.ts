@@ -2,32 +2,42 @@ import { getResearchCollection } from "@/loaders/collections";
 import ERRORS from "@/shared/errors";
 
 export const registerResearch = async (
-  firstName: string,
-  lastName: string,
-  email: string,
-  phoneNumber: string,
-  researchArea: string,
-  experience: string,
-  publications: string,
-  linkedin: string
+    firstName: string,
+    lastName: string,
+    srmemail: string,
+    personalemail: string,
+    registrationNumber: string,
+    phoneNumber: string,
+    department: string,
+    year: string,
+    github: string
 ) => {
-  const collection = await getResearchCollection();
-  const candidate = await collection.findOne({ email });
-  if (candidate) {
-    throw {
-      statusCode: ERRORS.CANDIDATE_ALREADY_REGISTERED.statusCode,
-      message: ERRORS.CANDIDATE_ALREADY_REGISTERED.message,
-    };
-  }
-  const data = await collection.insertOne({
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    researchArea,
-    experience,
-    publications,
-    linkedin,
-  });
-  return data;
+    try {
+        const collection = await getResearchCollection();
+
+        const candidate = await collection.findOne({ personalemail });
+        if (candidate) {
+            throw {
+                statusCode: ERRORS.STUDENT_ALREADY_REGISTERED.statusCode,
+                message: ERRORS.STUDENT_ALREADY_REGISTERED.message,
+            };
+        }
+
+        const result = await collection.insertOne({
+            firstName,
+            lastName,
+            srmemail,
+            personalemail,
+            registrationNumber,
+            phoneNumber,
+            department,
+            year,
+            github,
+        });
+
+        return result;
+    } catch (error) {
+        console.error('Error registering research:', error);
+        throw error;
+    }
 };
