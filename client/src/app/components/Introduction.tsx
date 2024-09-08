@@ -12,7 +12,7 @@ const Introduction: React.FC = () => {
                         alt="Cube Logo representing Data Science Community SRM"
                         layout="fill"
                         objectFit="contain"
-                        className="filter drop-shadow-[0_0_20px_rgba(138,43,226,0.7)]" // Larger purple glow effect
+                        className="filter drop-shadow-[0_0_20px_rgba(138,43,226,0.7)]"
                     />
                 </div>
                 <div className="text-center lg:text-left lg:ml-12">

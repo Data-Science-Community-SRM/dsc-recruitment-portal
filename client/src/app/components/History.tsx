@@ -20,11 +20,11 @@ const History: React.FC = () => {
     return (
         <section className="flex flex-col lg:flex-row justify-center items-center animate-fade-in-up px-6 lg:px-20 mt-8 lg:mt-16">
             <div className="w-full lg:w-2/3 mb-6 lg:mb-0 text-center"> {/* Increase width */}
-                <h2 className="text-2xl lg:text-4xl xl:text-5xl mb-4 font-light Montserrat relative inline-block"> {/* Increase font size */}
+                <h2 className="text-2xl lg:text-4xl xl:text-5xl mb-4 font-light Montserrat relative inline-block">
                     {displayText}
-                    <span className="absolute animate-blink text-3xl" style={{ right: '-30px', top: '0' }}> |</span> {/* Resize the "|" and adjust its position */}
+                    <span className="absolute animate-blink text-3xl" style={{ right: '-30px', top: '0' }}> |</span>
                 </h2>
-                <p className="text-base lg:text-lg xl:text-xl text-gray-400 mt-4 mx-auto max-w-6xl text-left"> {/* Increase maximum width */}
+                <p className="text-base lg:text-lg xl:text-xl text-gray-400 mt-4 mx-auto max-w-6xl text-left">
                     We are a technology-driven Data Science-based student-led Innovation community at SRMIST.
                     Our aim is to foster development and entrepreneurial skills among students and work as a community that inspires thousands.
                 </p>
