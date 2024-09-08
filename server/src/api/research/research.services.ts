@@ -4,8 +4,8 @@ import ERRORS from "@/shared/errors";
 export const registerResearch = async (
     firstName: string,
     lastName: string,
-    srmemail: string,
-    personalemail: string,
+    srmEmail: string,
+    personalEmail: string,
     registrationNumber: string,
     phoneNumber: string,
     department: string,
@@ -15,7 +15,7 @@ export const registerResearch = async (
     try {
         const collection = await getResearchCollection();
 
-        const candidate = await collection.findOne({ personalemail });
+        const candidate = await collection.findOne({ personalEmail });
         if (candidate) {
             throw {
                 statusCode: ERRORS.STUDENT_ALREADY_REGISTERED.statusCode,
@@ -26,8 +26,8 @@ export const registerResearch = async (
         const result = await collection.insertOne({
             firstName,
             lastName,
-            srmemail,
-            personalemail,
+            srmEmail,
+            personalEmail,
             registrationNumber,
             phoneNumber,
             department,

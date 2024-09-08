@@ -11,8 +11,8 @@ export const registerResearchHandler = async (
     const {
       firstName,
       lastName,
-      srmemail,
-      personalemail,
+      srmEmail,
+      personalEmail,
       registrationNumber,
       phoneNumber,
       department,
@@ -23,8 +23,8 @@ export const registerResearchHandler = async (
     await registerResearch(
       firstName,
       lastName,
-      srmemail,
-      personalemail,
+      srmEmail,
+      personalEmail,
       registrationNumber,
       phoneNumber,
       department,
