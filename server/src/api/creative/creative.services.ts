@@ -9,7 +9,8 @@ export const registerCreative = async (
   personalEmail: string,
   phoneNumber: string,
   department: string,
-  year: number
+  year: number,
+  subDomain: string
 ) => {
   const collection = await getCreativeCollection();
   const student = await collection.findOne({ registrationNumber });
@@ -28,6 +29,7 @@ export const registerCreative = async (
     phoneNumber,
     department,
     year,
+    subDomain,
   });
   return data;
 };

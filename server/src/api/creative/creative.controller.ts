@@ -17,6 +17,7 @@ export const registerCreativeHandler = async (
       phoneNumber,
       department,
       year,
+      subDomain,
     } = req.body;
     await registerCreative(
       firstName,
@@ -26,7 +27,8 @@ export const registerCreativeHandler = async (
       personalEmail,
       phoneNumber,
       department,
-      year
+      year,
+      subDomain
     );
     res.status(CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.code).send({
       success: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.success,

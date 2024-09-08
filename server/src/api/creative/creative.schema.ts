@@ -9,4 +9,5 @@ export const CreativeSchema = z.object({
   phoneNumber: z.string(),
   department: z.string(),
   year: z.number(),
+  subDomain: z.string(),
 });
