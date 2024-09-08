@@ -9,6 +9,5 @@ export const CorporateSchema = z.object({
   phoneNumber: z.string(),
   department: z.string(),
   year: z.number(),
-  github: z.string().url(),
-  linkedin: z.string().url(),
+  subDomain: z.string(),
 });

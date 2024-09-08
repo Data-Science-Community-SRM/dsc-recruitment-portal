@@ -17,8 +17,7 @@ export const registerCorporateHandler = async (
       phoneNumber,
       department,
       year,
-      github,
-      linkedin,
+      subDomain,
     } = req.body;
     await registerCorporate(
       firstName,
@@ -29,8 +28,7 @@ export const registerCorporateHandler = async (
       phoneNumber,
       department,
       year,
-      github,
-      linkedin
+      subDomain,
     );
     res.status(CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.code).send({
         success: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.success,

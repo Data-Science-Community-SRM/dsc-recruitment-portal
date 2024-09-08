@@ -10,8 +10,7 @@ export const registerCorporate = async (
   phoneNumber: string,
   department: string,
   year: number,
-  github: string,
-  linkedin: string
+  subDomain: string,
 ) => {
   const collection = await getCorporateCollection();
   const student = await collection.findOne({ registrationNumber });
@@ -30,8 +29,7 @@ export const registerCorporate = async (
     phoneNumber,
     department,
     year,
-    github,
-    linkedin,
+    subDomain,
   });
   return data;
 };
