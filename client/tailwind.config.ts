@@ -21,6 +21,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily:{
+        Montserrat: ["Montserrat","sans-serif"],
+        Poppins: ["Poppins","sans-serif"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
