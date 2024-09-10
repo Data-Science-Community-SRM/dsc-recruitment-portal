@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/Header';
-import Introduction from './components/Introduction';
-import History from './components/History';
+import Header from './components/header';
+import Introduction from './components/introduction';
+import History from './components/history';
 
 const Home: React.FC = () => {
     return (
