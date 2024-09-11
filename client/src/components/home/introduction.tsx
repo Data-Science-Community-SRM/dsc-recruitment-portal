@@ -55,7 +55,7 @@ const Introduction: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
                     >
-                        Because, you(&apos)ve gotta start somewhere.
+                        Because, you&apos;ve gotta start somewhere.
                     </motion.p>
                 </div>
             </div>
