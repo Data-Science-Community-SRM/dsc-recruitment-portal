@@ -9,17 +9,15 @@ const History: React.FC = () => {
     useEffect(() => {
         let index = 0;
         const interval = setInterval(() => {
-            setDisplayText(prev => {
-                const newText = text.slice(0, index + 1);
-                index += 1;
-                if (index >= text.length) {
-                    clearInterval(interval);
-                }
-                return newText;
-            });
+            setDisplayText(text.slice(0, index + 1));
+            index += 1;
+            if (index >= text.length) {
+                clearInterval(interval);
+            }
         }, 80);
         return () => clearInterval(interval);
     }, []);
+
     const headingVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }
