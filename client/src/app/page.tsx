@@ -1,15 +1,18 @@
-import Image from "next/image";
-import Form from "../components/domains/form";
+import React from 'react';
+import Header from '@/components/home/header';
+import Introduction from '@/components/home/introduction';
+import History from '@/components/home/history';
 
-export default function Home() {
-  return (
-    <div className="grid place-items-center h-screen">
-      <Form
-        includeGithub={true}
-        domain={"technical"}
-        subdomains={["frontend", "backend"]}
-        description="Some description about the domain"
-      />
-    </div>
-  );
-}
+const Home: React.FC = () => {
+    return (
+        <div className="min-h-screen bg-gradient-to-b from-[#1E0D2D] to-[#0D0513] text-white font-sans">
+            <Header />
+            <main className="container mx-auto px-4 py-8">
+                <Introduction />
+                <History />
+            </main>
+        </div>
+    );
+};
+
+export default Home;

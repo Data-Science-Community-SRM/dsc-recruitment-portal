@@ -1,6 +1,4 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +18,7 @@ export default function Form({
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-[#11071f] hover:shadow-lg shadow-[#1c0c2c] shadow-none">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         {domain.toUpperCase()}
       </h2>
@@ -39,9 +37,6 @@ export default function Form({
             <Input id="lastname" placeholder="Last name" type="text" />
           </LabelInputContainer>
         </div>
-        {/*
-        firstName, lastName, registrationNumber, srmEmail, personalEmail, phoneNumber, department, year, github, linkedin, subDomain
-        */}
         <LabelInputContainer className="mb-4">
           {/* <Label htmlFor="registrationNumber">Registration number</Label> */}
           <Input
@@ -98,12 +93,12 @@ export default function Form({
             id="cars"
             name="cars"
             className={cn(
-              `flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
+              `flex h-10 w-full border-none bg-gray-50 dark:bg-[#1c0c2c] text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
           file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 
           focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600
            disabled:cursor-not-allowed disabled:opacity-50
            dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
-           group-hover/input:shadow-none transition duration-400
+           group-hover/input:shadow-none transition duration-500
            `
             )}
           >
