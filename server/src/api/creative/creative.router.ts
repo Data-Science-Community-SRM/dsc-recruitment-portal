@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { CreativeSchema } from "./creative.schema";
 import { registerCreativeHandler } from "./creative.controller";
-import { validateRequest } from "../../shared/middlewares/valiator";
+import { validateRequest } from "../../shared/middlewares/validator";
 
 export default (): Router => {
   const app = Router();

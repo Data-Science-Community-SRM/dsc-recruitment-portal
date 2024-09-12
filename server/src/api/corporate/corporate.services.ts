@@ -1,5 +1,5 @@
-import { getCorporateCollection } from "@/loaders/collections";
-import ERRORS from "@/shared/errors";
+import { getCorporateCollection } from "../../loaders/collections";
+import ERRORS from "../../shared/errors";
 
 export const registerCorporate = async (
   firstName: string,

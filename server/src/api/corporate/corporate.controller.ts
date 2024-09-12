@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { registerCorporate } from "./corporate.services";
-import CONSTANTS from "@/shared/constants";
+import CONSTANTS from "../../shared/constants";
 
 export const registerCorporateHandler = async (
   req: Request,

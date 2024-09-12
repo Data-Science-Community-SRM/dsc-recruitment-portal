@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { registerCreative } from "./creative.services";
-import CONSTANTS from "@/shared/constants";
+import CONSTANTS from "../../shared/constants";
 
 export const registerCreativeHandler = async (
   req: Request,

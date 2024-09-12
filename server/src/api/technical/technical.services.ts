@@ -1,5 +1,5 @@
-import { getTechnicalCollection } from "@/loaders/collections";
-import ERRORS from "@/shared/errors";
+import { getTechnicalCollection } from "../../loaders/collections";
+import ERRORS from "../../shared/errors";
 
 export const registerTechnical = async (
   firstName: string,
@@ -11,7 +11,7 @@ export const registerTechnical = async (
   department: string,
   year: number,
   github: string,
-  linkedin: string
+  subDomain: string
 ) => {
   const collection = await getTechnicalCollection();
   const student = await collection.findOne({ registrationNumber });
@@ -31,7 +31,7 @@ export const registerTechnical = async (
     department,
     year,
     github,
-    linkedin,
+    subDomain,
   });
   return data;
 };
