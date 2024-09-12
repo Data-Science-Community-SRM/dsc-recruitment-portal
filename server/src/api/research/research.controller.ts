@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { registerResearch } from "./research.services";
-import CONSTANTS from "@/shared/constants";
+import CONSTANTS from "../../shared/constants";
 
 export const registerResearchHandler = async (
   req: Request,

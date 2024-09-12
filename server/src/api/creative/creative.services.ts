@@ -1,5 +1,5 @@
-import { getCreativeCollection } from "@/loaders/collections";
-import ERRORS from "@/shared/errors";
+import { getCreativeCollection } from "../../loaders/collections";
+import ERRORS from "../../shared/errors";
 
 export const registerCreative = async (
   firstName: string,

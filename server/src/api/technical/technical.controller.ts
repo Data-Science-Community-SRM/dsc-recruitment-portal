@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { registerTechnical } from "./technical.services";
-import CONSTANTS from "@/shared/constants";
+import CONSTANTS from "../../shared/constants";
 
 export const registerTechnicalHandler = async (
   req: Request,
@@ -18,7 +18,7 @@ export const registerTechnicalHandler = async (
       department,
       year,
       github,
-      linkedin,
+      subDomain
     } = req.body;
     await registerTechnical(
       firstName,
@@ -30,7 +30,7 @@ export const registerTechnicalHandler = async (
       department,
       year,
       github,
-      linkedin
+      subDomain
     );
     res.status(CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.code).send({
         success: CONSTANTS.STUDENT_REGISTER_SUCCESSFULLY.success,

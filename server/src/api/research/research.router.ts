@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ResearchSchema } from "./research.schema";
 import { registerResearchHandler } from "./research.controller";
-import { validateRequest } from "../../shared/middlewares/valiator";
+import { validateRequest } from "../../shared/middlewares/validator";
 
 export default (): Router => {
   const app = Router();

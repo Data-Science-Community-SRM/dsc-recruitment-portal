@@ -10,5 +10,5 @@ export const TechnicalSchema = z.object({
   department: z.string(),
   year: z.number(),
   github: z.string().url(),
-  linkedin: z.string().url(),
+  subDomain: z.string()
 });

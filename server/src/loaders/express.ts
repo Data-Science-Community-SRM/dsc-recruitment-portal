@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import config from '../config';
 import routes from '../api';
-import { errorHandler } from '@/shared/middlewares/errorHandler';
+import { errorHandler } from '../shared/middlewares/errorHandler';
 
 export default ({ app }: { app: express.Application }): void => {
     app.enable('trust proxy');

@@ -1,5 +1,5 @@
-import { getResearchCollection } from "@/loaders/collections";
-import ERRORS from "@/shared/errors";
+import { getResearchCollection } from "../../loaders/collections";
+import ERRORS from "../../shared/errors";
 
 export const registerResearch = async (
     firstName: string,

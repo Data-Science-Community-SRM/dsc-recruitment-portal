@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { CorporateSchema } from "./corporate.schema";
 import { registerCorporateHandler } from "./corporate.controller";
-import { validateRequest } from "../../shared/middlewares/valiator";
+import { validateRequest } from "../../shared/middlewares/validator";
 
 export default (): Router => {
     const app = Router();
