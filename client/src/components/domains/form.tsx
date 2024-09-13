@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 
@@ -13,12 +14,38 @@ export default function Form({
   subdomains: string[];
   description: string;
 }) {
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [registrationNumber, setRegistrationNumber] = useState("");
+  const [srmEmail, setSrmEmail] = useState("");
+  const [personalEmail, setPersonalEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [department, setDepartment] = useState("");
+  const [year, setYear] = useState("");
+  const [github, setGithub] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [subDomain, setSubDomain] = useState("");
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
+    const data = {
+      firstname,
+      lastname,
+      registrationNumber,
+      srmEmail,
+      personalEmail,
+      phoneNumber,
+      department,
+      year,
+      github,
+      linkedin,
+      subDomain,
+    };
+    console.log(data);
   };
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-[#11071f] hover:shadow-lg shadow-[#1c0c2c] shadow-none">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         {domain.toUpperCase()}
       </h2>
@@ -30,11 +57,21 @@ export default function Form({
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             {/* <Label htmlFor="firstname">First name</Label> */}
-            <Input id="firstname" placeholder="First name" type="text" />
+            <Input
+              id="firstname"
+              placeholder="First name"
+              type="text"
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </LabelInputContainer>
           <LabelInputContainer>
             {/* <Label htmlFor="lastname">Last name</Label> */}
-            <Input id="lastname" placeholder="Last name" type="text" />
+            <Input
+              id="lastname"
+              placeholder="Last name"
+              type="text"
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
@@ -43,28 +80,54 @@ export default function Form({
             id="registrationNumber"
             placeholder="Registration Number"
             type="text"
+            onChange={(e) => setRegistrationNumber(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           {/* <Label htmlFor="srmEmail">SRM email</Label> */}
-          <Input id="srmEmail" placeholder="SRM Email ID" type="email" />
+          <Input
+            id="srmEmail"
+            placeholder="SRM Email ID"
+            type="email"
+            onChange={(e) => setSrmEmail(e.target.value)}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           {/* <Label htmlFor="personalEmail">Personal email</Label> */}
-          <Input id="personalEmail" placeholder="Email" type="email" />
+          <Input
+            id="personalEmail"
+            placeholder="Email"
+            type="email"
+            onChange={(e) => setPersonalEmail(e.target.value)}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           {/* <Label htmlFor="phoneNumber">Phone number</Label> */}
-          <Input id="phoneNumber" placeholder="Phone Number" type="tel" />
+          <Input
+            id="phoneNumber"
+            placeholder="Phone Number"
+            type="tel"
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
         </LabelInputContainer>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer className="">
             {/* <Label htmlFor="department">Department</Label> */}
-            <Input id="department" placeholder="Department" type="text" />
+            <Input
+              id="department"
+              placeholder="Department"
+              type="text"
+              onChange={(e) => setDepartment(e.target.value)}
+            />
           </LabelInputContainer>
           <LabelInputContainer className="">
             {/* <Label htmlFor="year">Year</Label> */}
-            <Input id="year" placeholder="Which year btw?" type="number" />
+            <Input
+              id="year"
+              placeholder="Which year btw?"
+              type="number"
+              onChange={(e) => setYear(e.target.value)}
+            />
           </LabelInputContainer>
         </div>
         {includeGithub && (
@@ -75,6 +138,7 @@ export default function Form({
                 id="github"
                 placeholder="github.com/username"
                 type="text"
+                onChange={(e) => setGithub(e.target.value)}
               />
             </LabelInputContainer>
             <LabelInputContainer className="mb-4">
@@ -83,6 +147,7 @@ export default function Form({
                 id="linkedin"
                 placeholder="linkedin.com/in/username"
                 type="text"
+                onChange={(e) => setLinkedin(e.target.value)}
               />
             </LabelInputContainer>
           </div>
@@ -93,14 +158,15 @@ export default function Form({
             id="cars"
             name="cars"
             className={cn(
-              `flex h-10 w-full border-none bg-gray-50 dark:bg-[#1c0c2c] text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
+              `flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
           file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 
           focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600
            disabled:cursor-not-allowed disabled:opacity-50
            dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
-           group-hover/input:shadow-none transition duration-500
+           group-hover/input:shadow-none transition duration-400
            `
             )}
+            onChange={(e) => setSubDomain(e.target.value)}
           >
             {subdomains.map((subdomain, index) => {
               return (
