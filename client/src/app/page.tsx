@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/home/header';
 import Introduction from '@/components/home/introduction';
 import History from '@/components/home/history';
+import Domains from '@/components/domains/doms';
 
 const Home: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
                 <Introduction />
                 <History />
             </main>
+            <Domains/>
         </div>
     );
 };

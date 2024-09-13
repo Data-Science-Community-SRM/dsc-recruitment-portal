@@ -1,0 +1,84 @@
+.container {
+    text-align: center;
+    padding: 50px;
+    background: radial-gradient(circle at center, #1A0B2E, #170A22);
+    color: white;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .card {
+    background: linear-gradient(-90deg, #913fe2, #180538);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    text-align: left;
+    width: 700px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-top: 5px solid #6d34d1; 
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .icon img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .cardText {
+    font-size: 1rem;
+    color: #e0d6ff;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color: #391175;
+    border: 2px solid #6d34d1; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    width: 150px;
+  }
+  
+  .button:hover {
+    background-color: #6d34d1;
+    border-color: #6d34d1; 
+  }
+  
+  .cardStyle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
