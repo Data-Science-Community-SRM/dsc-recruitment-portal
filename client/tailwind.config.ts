@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        Montserrat: ["Montserrat","sans-serif"],
+        Poppins: ["Poppins","sans-serif"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -2,12 +2,21 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
+
     <div className="min-h-20 bg-[#1A0B2E] px-2 lg:px-10 py-2 flex justify-between items-center shadow-md">
       <div className="flex items-center gap-2 logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
           height="50"
+
+    <div className="min-h-28 bg-[#1A0B2E] px-4 lg:px-14 lg:py-4 flex justify-between items-center shadow-md">
+      <div className="flex items-center gap-4 logo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="74"
+          height="80"
+
           viewBox="0 0 74 80"
           fill="none"
         >
@@ -74,6 +83,7 @@ export default function Navbar() {
         </svg>
 
         <div className="logo-text flex flex-col">
+
           <div className="flex gap-1 items-center">
             <h1 className="text-xs lg:text-2xl font-semibold font-Poppins text-white">Data</h1>
             <h1 className="lg:text-2xl text-xs font-semibold font-Poppins text-[#8855C4]">Science</h1>
@@ -87,6 +97,27 @@ export default function Navbar() {
       <div className="sections flex items-center lg:gap-16 gap-4">
         <a href="/" className="text-white text-xs lg:text-lg font-Montserrat">Home</a>
         <a href="/aboutus" className="text-white text-xs lg:text-lg font-Montserrat">About Us</a>
+
+          <div className="flex gap-2 items-center">
+            <h1 className="text-sm lg:text-3xl font-semibold font-Poppins  text-white"> Data</h1>{" "}
+            <h1 className="lg:text-3xl text-sm font-semibold font-Poppins text-[#8855C4]">
+              {" "}
+              Science{" "}
+            </h1>
+          </div>
+          <div className="flex gap-2 items-center">
+            <h1 className="lg:text-3xl text-sm font-semibold font-Poppins  text-white">
+              {" "}
+              Community{" "}
+            </h1>{" "}
+            <h1 className="lg:text-3xl text-sm font-semibold font-Poppins text-[#8855C4]">SRM</h1>
+          </div>
+        </div>
+      </div>
+      <div className="sections flex items-center lg:gap-14 gap-2">
+        <a href="/" className="text-white text-sm lg:text-xl font-Montserrat"> Home </a>
+        <a href="/aboutus" className="text-white text-sm lg:text-xl font-Montserrat"> About Us </a>
+
       </div>
     </div>
   );

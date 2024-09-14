@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/home/header';
 import Introduction from '@/components/home/introduction';
@@ -16,3 +17,15 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+import Navbar from "@/components/navbar";
+import Image from "next/image";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-[#11071F]">
+      <Navbar/>
+    </div>
+  );
+}
+
