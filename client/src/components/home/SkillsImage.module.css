@@ -1,0 +1,5 @@
+.skillsContainer {
+    background: linear-gradient(180deg, #1e1e1e 0%, #282828 100%); /* Dark gradient */
+    text-align: center;
+    padding: 20px;
+}
