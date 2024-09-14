@@ -36,7 +36,7 @@ export default function Form({
       !phoneNumber ||
       !department ||
       !year ||
-      (includeGithub && (!github || !linkedin)) || 
+      (includeGithub && (!github || !linkedin)) ||
       !subDomain
     ) {
       alert("Please fill in all required fields.");
@@ -58,88 +58,89 @@ export default function Form({
     };
     console.log(data);
   };
+
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#1c0c2c] text-white">
+      <h2 className="font-bold text-xl text-white">
         {domain.toUpperCase()}
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+      <p className="text-white text-sm max-w-sm mt-2">
         {description}
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
-            {/* <Label htmlFor="firstname">First name</Label> */}
             <Input
               id="firstname"
               placeholder="First name"
               type="text"
+              className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               onChange={(e) => setFirstName(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            {/* <Label htmlFor="lastname">Last name</Label> */}
             <Input
               id="lastname"
               placeholder="Last name"
               type="text"
+              className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               onChange={(e) => setLastName(e.target.value)}
             />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
-          {/* <Label htmlFor="registrationNumber">Registration number</Label> */}
           <Input
             id="registrationNumber"
             placeholder="Registration Number"
             type="text"
+            className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             onChange={(e) => setRegistrationNumber(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          {/* <Label htmlFor="srmEmail">SRM email</Label> */}
           <Input
             id="srmEmail"
             placeholder="SRM Email ID"
             type="email"
+            className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             onChange={(e) => setSrmEmail(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          {/* <Label htmlFor="personalEmail">Personal email</Label> */}
           <Input
             id="personalEmail"
             placeholder="Email"
             type="email"
+            className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             onChange={(e) => setPersonalEmail(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          {/* <Label htmlFor="phoneNumber">Phone number</Label> */}
           <Input
             id="phoneNumber"
             placeholder="Phone Number"
             type="tel"
+            className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </LabelInputContainer>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer className="">
-            {/* <Label htmlFor="department">Department</Label> */}
             <Input
               id="department"
               placeholder="Department"
               type="text"
+              className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               onChange={(e) => setDepartment(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="">
-            {/* <Label htmlFor="year">Year</Label> */}
             <Input
               id="year"
               placeholder="Which year btw?"
               type="number"
+              className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               onChange={(e) => setYear(e.target.value)}
             />
           </LabelInputContainer>
@@ -147,39 +148,33 @@ export default function Form({
         {includeGithub && (
           <div>
             <LabelInputContainer className="mb-4">
-              {/* <Label htmlFor="github">Github</Label> */}
               <Input
                 id="github"
                 placeholder="github.com/username"
                 type="text"
+                className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
                 onChange={(e) => setGithub(e.target.value)}
               />
             </LabelInputContainer>
             <LabelInputContainer className="mb-4">
-              {/* <Label htmlFor="linkedin">Linkedin</Label> */}
               <Input
                 id="linkedin"
                 placeholder="linkedin.com/in/username"
                 type="text"
+                className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
                 onChange={(e) => setLinkedin(e.target.value)}
               />
             </LabelInputContainer>
           </div>
         )}
         <LabelInputContainer className="mb-4">
-          {/* <Label htmlFor="subDomain">Subdomain</Label> */}
           <select
-            id="cars"
-            name="cars"
+            id="subDomain"
+            name="subDomain"
             value={subDomain}
             className={cn(
-              `flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
-          file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 
-          focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600
-           disabled:cursor-not-allowed disabled:opacity-50
-           dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
-           group-hover/input:shadow-none transition duration-400
-           `
+              `flex h-10 w-full border-none bg-[#11071f] text-white placeholder-gray-400 shadow-input rounded-md px-3 py-2 text-sm focus-visible:outline-none
+              focus-visible:ring-[2px] focus-visible:ring-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 transition duration-400`
             )}
             onChange={(e) => setSubDomain(e.target.value)}
           >
@@ -193,10 +188,10 @@ export default function Form({
           </select>
         </LabelInputContainer>
 
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-2 h-[1px] w-full" />
+        <div className="bg-gradient-to-r from-transparent via-neutral-300 to-transparent my-2 h-[1px] w-full" />
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="bg-[#11071f] relative group/btn from-gray-700 to-neutral-600 block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]"
           type="submit"
         >
           Submit &rarr;
