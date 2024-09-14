@@ -29,6 +29,7 @@ const domains = [
         gradient: 'from-blue-900 to-blue-800',
     },
 ];
+
 const DomainCard = ({ domain, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,7 @@ const DomainCard = ({ domain, index }) => (
             <Image src={domain.image} alt={domain.title} width={24} height={24} className="z-10" />
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>
         </motion.div>
-        <div className="text-center sm:text-left"> {/* Added text-center for mobile */}
+        <div className="text-center sm:text-left">
             <h3 className="text-white text-lg sm:text-xl font-semibold">{domain.title}</h3>
             <p className="text-purple-300 text-xs sm:text-sm">{domain.description}</p>
             <motion.button
@@ -64,7 +65,7 @@ const DomainsComponent = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-white text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 text-center"
+                className="text-white text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 text-left sm:text-left" // Added text-left for both screen sizes
             >
                 Domains
             </motion.h2>
