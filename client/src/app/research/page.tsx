@@ -7,11 +7,11 @@ export default function Research() {
       <div className=" lg:p-12 flex flex-col gap-16 xl:gap-28">
         <img className="absolute z-10 w-60 lg:w-auto" src="research.png " />
         <div className="z-50 flex flex-col items-center justify-center content ">
-          <h1 className="text-white font-Montserrat text-3xl lg:text-5xl font-semibold mt-14">
+          <h1 className="text-white font-Montserrat text-2xl lg:text-5xl font-semibold mt-14">
             {" "}
             Research Domain{" "}
           </h1>
-          <h2 className="text-white text-xl font-Montserrat lg:text-2xl font-semibold text-wrap w-2/3 mt-16 ">
+          <h2 className="text-white text-base text-center font-Montserrat lg:text-2xl font-semibold  w-2/3 mt-16 ">
             "Research is seeing what everybody else has seen and thinking what
             nobody else has thought." This powerful statement captures the
             essence of innovation and discovery, particularly in the field of
