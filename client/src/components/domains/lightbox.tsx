@@ -40,12 +40,6 @@ const Lightbox: React.FC<LightboxProps> = ({
         exit: { opacity: 0, y: -20 },
     };
 
-    const layoutVariants = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1 },
-        exit: { opacity: 0 },
-    };
-
     return (
         <motion.div
             className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-70"
@@ -55,43 +49,48 @@ const Lightbox: React.FC<LightboxProps> = ({
             exit="exit"
         >
             <motion.div
-                className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-md ${
-                    showForm ? 'h-[80vh] max-h-[80vh]' : 'max-h-[30vh]'
-                } text-center overflow-auto`}
-                variants={contentVariants}
+                className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-lg ${
+                    showForm ? 'max-h-[80vh] overflow-y-auto' : 'max-h-[40vh]'
+                } text-center overflow-hidden`}
+                initial="initial"
+                animate="animate"
+                exit="exit"
                 layout
+                transition={{ layout: { duration: 0.5, ease: 'easeInOut' } }}
             >
                 <AiOutlineClose
-                    className="absolute top-4 right-4 text-white cursor-pointer text-2xl"
+                    className="absolute top-4 right-4 text-white cursor-pointer text-xl"
                     onClick={onClose}
                 />
 
                 <Image
                     src={domain.image}
                     alt={domain.title}
-                    width={100}
-                    height={100}
+                    width={80}
+                    height={80}
                     className="mx-auto mb-4"
                 />
-                <h2 className="text-white text-2xl font-semibold mb-2">
+                <h2 className="text-white text-xl font-semibold mb-2">
                     {domain.title}
                 </h2>
-                <p className="text-purple-300 mb-4">{domain.description}</p>
+                <p className="text-purple-300 text-sm mb-4">{domain.description}</p>
+
                 <div className="flex justify-center items-center gap-4 p-4">
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait">
                         {!showForm ? (
                             <motion.div
                                 key="buttons"
                                 initial="initial"
                                 animate="animate"
                                 exit="exit"
-                                variants={layoutVariants}
+                                variants={contentVariants}
                                 className="flex space-x-4"
+                                style={{ minHeight: "35px" }}
                             >
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-purple-900 text-white py-1.5 px-3 rounded-md text-sm"
+                                    className="bg-purple-900 text-white py-1 px-3 rounded-md text-sm"
                                     onClick={() => setShowForm(true)}
                                 >
                                     APPLY
@@ -99,7 +98,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-purple-800 text-white py-1.5 px-3 rounded-md text-sm"
+                                    className="bg-purple-800 text-white py-1 px-3 rounded-md text-sm"
                                     onClick={() =>
                                         (window.location.href = `/${domain.title.toLowerCase()}`)
                                     }
@@ -113,8 +112,9 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 initial="initial"
                                 animate="animate"
                                 exit="exit"
-                                variants={layoutVariants}
+                                variants={contentVariants}
                                 className="w-full"
+                                style={{ minHeight: "50vh" }}
                             >
                                 <Form
                                     includeGithub={true}
