@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -29,15 +29,15 @@ const Lightbox: React.FC<LightboxProps> = ({
     if (!domain) return null;
 
     const containerVariants = {
-        initial: { opacity: 0, scale: 0.8 },
+        initial: { opacity: 0, scale: 0.85 },
         animate: { opacity: 1, scale: 1 },
-        exit: { opacity: 0, scale: 0.8 },
+        exit: { opacity: 0, scale: 0.85 },
     };
 
     const contentVariants = {
-        initial: { opacity: 0, y: 20 },
+        initial: { opacity: 0, y: 25 },
         animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -20 },
+        exit: { opacity: 0, y: -25 },
     };
 
     return (
@@ -47,6 +47,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             initial="initial"
             animate="animate"
             exit="exit"
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
         >
             <motion.div
                 className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-lg ${
@@ -56,7 +57,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 animate="animate"
                 exit="exit"
                 layout
-                transition={{ layout: { duration: 0.5, ease: 'easeInOut' } }}
+                transition={{ layout: { duration: 0.6, ease: 'easeInOut' } }}
             >
                 <AiOutlineClose
                     className="absolute top-4 right-4 text-white cursor-pointer text-xl"
@@ -84,6 +85,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 animate="animate"
                                 exit="exit"
                                 variants={contentVariants}
+                                transition={{ duration: 0.4, ease: 'easeOut' }}
                                 className="flex space-x-4"
                                 style={{ minHeight: "35px" }}
                             >
@@ -113,6 +115,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 animate="animate"
                                 exit="exit"
                                 variants={contentVariants}
+                                transition={{ duration: 0.4, ease: 'easeOut' }}
                                 className="w-full"
                                 style={{ minHeight: "50vh" }}
                             >
@@ -131,4 +134,4 @@ const Lightbox: React.FC<LightboxProps> = ({
     );
 };
 
-export default Lightbox;
+export default memo(Lightbox);
