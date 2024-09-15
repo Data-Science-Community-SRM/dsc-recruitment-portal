@@ -1,5 +1,6 @@
 "use client";
 import Header from "@/components/home/header";
+import Footer from "../footer";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
@@ -58,6 +59,7 @@ export default function Domain({ imgSrc, altText, sections }: DomainProps) {
                     </motion.div>
                 ))}
             </div>
+            <Footer/>
         </div>
     );
 }
