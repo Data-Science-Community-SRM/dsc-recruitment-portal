@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Domain = {
     title: string;
@@ -43,31 +44,33 @@ type DomainCardProps = {
 };
 
 const DomainCard: React.FC<DomainCardProps> = ({ domain, index }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="bg-purple-950 bg-opacity-40 backdrop-blur-sm rounded-lg p-4 sm:p-6 flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:bg-opacity-60 transition-all duration-300"
-    >
+    <Link href={`/${domain.title.toLowerCase()}`} passHref>
         <motion.div
-            whileHover={{ scale: 1.1 }}
-            className={`bg-gradient-to-br ${domain.gradient} p-2 sm:p-4 rounded-full shadow-lg shadow-purple-500/50 flex items-center justify-center relative w-10 sm:w-16 h-10 sm:h-16`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="cursor-pointer bg-purple-950 bg-opacity-40 backdrop-blur-sm rounded-lg p-4 sm:p-6 flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:bg-opacity-60 transition-all duration-300"
         >
-            <Image src={domain.image} alt={domain.title} width={24} height={24} className="z-10" />
-            <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>
-        </motion.div>
-        <div className="text-center sm:text-left">
-            <h3 className="text-white text-lg sm:text-xl font-semibold">{domain.title}</h3>
-            <p className="text-purple-300 text-xs sm:text-sm">{domain.description}</p>
-            <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: '#3B0764' }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-purple-900 text-white rounded-md text-xs sm:text-sm transition-colors duration-300"
+            <motion.div
+                whileHover={{ scale: 1.1 }}
+                className={`bg-gradient-to-br ${domain.gradient} p-2 sm:p-4 rounded-full shadow-lg shadow-purple-500/50 flex items-center justify-center relative w-10 sm:w-16 h-10 sm:h-16`}
             >
-                LEARN MORE
-            </motion.button>
-        </div>
-    </motion.div>
+                <Image src={domain.image} alt={domain.title} width={24} height={24} className="z-10" />
+                <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>
+            </motion.div>
+            <div className="text-center sm:text-left">
+                <h3 className="text-white text-lg sm:text-xl font-semibold">{domain.title}</h3>
+                <p className="text-purple-300 text-xs sm:text-sm">{domain.description}</p>
+                <motion.button
+                    whileHover={{ scale: 1.05, backgroundColor: '#3B0764' }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-purple-900 text-white rounded-md text-xs sm:text-sm transition-colors duration-300"
+                >
+                    LEARN MORE
+                </motion.button>
+            </div>
+        </motion.div>
+    </Link>
 );
 
 const DomainsComponent = () => {

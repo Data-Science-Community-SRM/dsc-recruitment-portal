@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react"; // Removed useState
+import React, { useEffect } from "react";
 import Header from "@/components/home/header";
 import Introduction from "@/components/home/introduction";
 import History from "@/components/home/history";
