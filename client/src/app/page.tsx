@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react"; // Removed useState
 import Header from "@/components/home/header";
 import Introduction from "@/components/home/introduction";
 import History from "@/components/home/history";
@@ -12,11 +12,16 @@ const Home: React.FC = () => {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
 
+        if (!ctx) {
+            console.error('2D context not supported or canvas initialization failed.');
+            return;
+        }
+
         canvas.width = 200;
         canvas.height = 20;
         ctx.font = '12px Arial';
 
-        let text = "Data Science Community Recruitments";
+        const text = "Data Science Community Recruitments"; // Changed to const
         let textX = canvas.width;
 
         const animate = () => {

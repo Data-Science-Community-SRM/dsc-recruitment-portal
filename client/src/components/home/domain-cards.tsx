@@ -3,7 +3,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const domains = [
+type Domain = {
+    title: string;
+    description: string;
+    image: string;
+    gradient: string;
+};
+
+const domains: Domain[] = [
     {
         title: 'Technical',
         description: 'Level Up Your Skills, Unlock New Worlds',
@@ -30,7 +37,12 @@ const domains = [
     },
 ];
 
-const DomainCard = ({ domain, index }) => (
+type DomainCardProps = {
+    domain: Domain;
+    index: number;
+};
+
+const DomainCard: React.FC<DomainCardProps> = ({ domain, index }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -65,7 +77,7 @@ const DomainsComponent = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-white text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 text-left sm:text-left" // Added text-left for both screen sizes
+                className="text-white text-2xl sm:text-3xl font-bold mb-4 sm:mb-8 text-left sm:text-left"
             >
                 Domains
             </motion.h2>
