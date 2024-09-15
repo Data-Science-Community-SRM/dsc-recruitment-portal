@@ -21,7 +21,7 @@ const Home: React.FC = () => {
         canvas.height = 20;
         ctx.font = '12px Arial';
 
-        const text = "Data Science Community Recruitments"; // Changed to const
+        const text = "Data Science Community Recruitments";
         let textX = canvas.width;
 
         const animate = () => {
