@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/home/header";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 type DomainProps = {
@@ -11,6 +11,8 @@ type DomainProps = {
 };
 
 export default function Domain({ imgSrc, altText, sections }: DomainProps) {
+    const [hasAnimated, setHasAnimated] = useState(false);
+
     return (
         <div className="min-h-screen bg-[#11071F] pb-12 xl:pb-40 relative">
             <Header />
@@ -32,10 +34,17 @@ export default function Domain({ imgSrc, altText, sections }: DomainProps) {
                 {sections.map((section, index) => (
                     <motion.div
                         key={index}
-                        className="z-50 flex flex-col items-center justify-center text-center mt-24" // Added margin-top to move title down
+                        className="z-50 flex flex-col items-center justify-center text-center mt-24"
                         initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }}
+                        animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+                        onViewportEnter={() => {
+                            if (!hasAnimated) setHasAnimated(true);
+                        }}
+                        transition={{
+                            duration: 0.6,
+                            ease: "easeOut",
+                            delay: index * 0.15,
+                        }}
                     >
                         <h1 className="text-white text-xl md:text-3xl lg:text-4xl font-bold font-Montserrat">
                             {section.heading}

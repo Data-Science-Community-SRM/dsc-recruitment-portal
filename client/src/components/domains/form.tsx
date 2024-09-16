@@ -5,9 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function Form({
   includeGithub,
-  domain,
   subdomains,
-  description,
 }: {
   includeGithub: boolean;
   domain: string;
@@ -61,12 +59,6 @@ export default function Form({
 
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#1c0c2c] text-white">
-      <h2 className="font-bold text-xl text-white">
-        {domain.toUpperCase()}
-      </h2>
-      <p className="text-white text-sm max-w-sm mt-2">
-        {description}
-      </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
