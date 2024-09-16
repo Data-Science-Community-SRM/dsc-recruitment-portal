@@ -13,7 +13,7 @@ type DomainProps = {
 
 export default function Domain({ imgSrc, altText, sections }: DomainProps) {
     return (
-        <div className="min-h-screen bg-[#11071F] pb-12 xl:pb-40 relative">
+        <div className="min-h-screen bg-[#11071F]  relative">
             <Header />
             <div className="p-6 flex flex-col gap-10 xl:gap-16 relative z-20">
                 <motion.div
@@ -51,6 +51,7 @@ export default function Domain({ imgSrc, altText, sections }: DomainProps) {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.5, delay: lineIndex * 0.1 }}
                                 >
+                                
                                     {line}
                                     <br />
                                 </motion.div>

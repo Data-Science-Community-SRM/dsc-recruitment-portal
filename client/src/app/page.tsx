@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Header from "@/components/home/header";
+import Footer from "@/components/footer";
 import Introduction from "@/components/home/introduction";
 import History from "@/components/home/history";
 import Hero from "@/components/home/hero";
@@ -71,6 +72,7 @@ const Home: React.FC = () => {
                 </div>
                 <Hero />
             </main>
+            <Footer/>
         </div>
     );
 };
