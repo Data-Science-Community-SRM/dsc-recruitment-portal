@@ -50,9 +50,9 @@ const Lightbox: React.FC<LightboxProps> = ({
             transition={{ duration: 0.4, ease: 'easeInOut' }}
         >
             <motion.div
-                className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-xl ${
-                    showForm ? 'max-h-[80vh] overflow-y-auto' : 'max-h-[45vh]'
-                } text-center overflow-hidden px-8 py-6`}
+                className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-lg ${
+                    showForm ? 'max-h-[80vh] overflow-y-auto' : 'max-h-[40vh]'
+                } text-center overflow-hidden`}
                 initial="initial"
                 animate="animate"
                 exit="exit"
@@ -60,7 +60,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 transition={{ layout: { duration: 0.6, ease: 'easeInOut' } }}
             >
                 <AiOutlineClose
-                    className="absolute top-6 right-6 text-white cursor-pointer text-2xl"
+                    className="absolute top-4 right-4 text-white cursor-pointer text-2xl" // Increased icon size here
                     onClick={onClose}
                 />
 
@@ -74,9 +74,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <h2 className="text-white text-xl font-semibold mb-2">
                     {domain.title}
                 </h2>
-                <p className="text-purple-300 text-sm mb-4">
-                    {domain.description}
-                </p>
+                <p className="text-purple-300 text-sm mb-4 px-6">{domain.description}</p> {/* Added padding (px-6) here */}
 
                 <div className="flex justify-center items-center gap-4 p-4">
                     <AnimatePresence mode="wait">
@@ -89,7 +87,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 variants={contentVariants}
                                 transition={{ duration: 0.4, ease: 'easeOut' }}
                                 className="flex space-x-4"
-                                style={{ minHeight: '35px' }}
+                                style={{ minHeight: "35px" }}
                             >
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
@@ -119,7 +117,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 variants={contentVariants}
                                 transition={{ duration: 0.4, ease: 'easeOut' }}
                                 className="w-full"
-                                style={{ minHeight: '50vh' }}
+                                style={{ minHeight: "50vh" }}
                             >
                                 <Form
                                     includeGithub={true}

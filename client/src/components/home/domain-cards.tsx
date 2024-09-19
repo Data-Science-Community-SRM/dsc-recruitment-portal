@@ -69,8 +69,8 @@ const DomainCard: React.FC<DomainCardProps> = ({
             <Image
                 src={domain.image}
                 alt={domain.title}
-                width={24}
-                height={24}
+                width={100}
+                height={100}
                 className="z-10"
             />
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>

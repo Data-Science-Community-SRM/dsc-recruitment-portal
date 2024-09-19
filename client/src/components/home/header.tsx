@@ -1,15 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Logo from './colour.svg';
 import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
     const scrollToDomain = () => {
         const domainSection = document.getElementById('domain');
         if (domainSection) {
@@ -17,15 +12,15 @@ const Header: React.FC = () => {
         }
     };
 
-    const menuIconVariants = {
-        open: { rotate: 90, transition: { duration: 0.3 } },
-        closed: { rotate: 0, transition: { duration: 0.3 } }
+    const navigateHome = () => {
+        window.location.href = '/';  // Navigate to home page
     };
 
     return (
         <header className="p-4 bg-[#1A0B2E] text-white relative z-10">
             <div className="flex justify-between items-center">
-                <div className="flex items-center">
+                {/* Logo and Text */}
+                <div className="flex items-center cursor-pointer" onClick={navigateHome}>
                     <motion.div
                         className="w-12 h-12 mr-4"
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -61,41 +56,17 @@ const Header: React.FC = () => {
                         </motion.span>
                     </motion.div>
                 </div>
-                <motion.button
-                    className="sm:hidden flex items-center px-3 py-2 border rounded text-white border-white"
-                    onClick={toggleMenu}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    variants={menuIconVariants}
-                    initial="closed"
-                    animate={isMenuOpen ? "open" : "closed"}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                >
-                    <svg className="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                    </svg>
-                </motion.button>
 
-                <nav className="hidden sm:flex">
-                    <motion.a
-                        href="/"
-                        className="mx-2 px-4 py-2 text-sm rounded-full bg-[#8B55E9] bg-opacity-20 hover:bg-opacity-50 transition-colors duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Home
-                    </motion.a>
-                    <motion.a
-                        onClick={scrollToDomain}
-                        className="mx-2 px-4 py-2 text-sm rounded-full font-semibold text-white bg-[#4B2995] hover:shadow-lg hover:shadow-[#A774FF]/50 transition-all duration-300 cursor-pointer relative"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#A774FF] to-[#D9B2FF] rounded-full opacity-50 blur-md"></span>
-                        Apply Now
-                    </motion.a>
-                </nav>
+                {/* Enhanced "Apply Now" Button */}
+                <motion.a
+                    onClick={scrollToDomain}
+                    className="relative sm:mx-2 px-6 py-3 text-md md:text-lg lg:text-xl rounded-full font-semibold text-white bg-gradient-to-r from-[#652D90] to-[#43187E] hover:shadow-xl hover:shadow-[#A774FF]/70 transition-all duration-300 ease-out cursor-pointer"
+                    whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#4B226D] to-[#2C1355] rounded-full opacity-80 blur-lg"></span>
+                    <span className="relative z-10">Apply Now</span>
+                </motion.a>
             </div>
         </header>
     );

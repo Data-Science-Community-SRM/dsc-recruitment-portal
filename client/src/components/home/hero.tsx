@@ -29,7 +29,7 @@ const SkillsImage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                 animate={{
                     opacity: 1,
-                    scale: 1,
+                    scale: 1.2,
                     rotate: 0,
                     transition: {
                         duration: 1.3,
@@ -49,25 +49,6 @@ const SkillsImage: React.FC = () => {
                 />
             </motion.div>
 
-            <div className="flex space-x-6">
-                <motion.a
-                    href="#contact"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-purple-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-300"
-                >
-                    Contact Us
-                </motion.a>
-
-                <motion.a
-                    href="#join"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-purple-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-300"
-                >
-                    Join Us
-                </motion.a>
-            </div>
         </motion.section>
     );
 };
