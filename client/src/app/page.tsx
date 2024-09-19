@@ -67,10 +67,14 @@ const Home: React.FC = () => {
                 </motion.h1>
                 <Introduction />
                 <History />
-                <div className="mt-36">
-                    <Domain />
-                </div>
-                <Hero />
+                <section id="domain">
+                    <div className="mt-36">
+                        <Domain/>
+                    </div>
+
+                </section>
+
+                <Hero/>
             </main>
             <Footer/>
         </div>
