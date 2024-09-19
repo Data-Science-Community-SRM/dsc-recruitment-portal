@@ -1,3 +1,4 @@
+import { sendConfirmation } from "@/shared/utils/confirm";
 import { getCreativeCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 
@@ -31,5 +32,12 @@ export const registerCreative = async (
     year,
     subDomain,
   });
+  
+  sendConfirmation({
+    firstName,
+    lastName,
+    email: srmEmail,
+    domain: 'creative',
+  })
   return data;
 };

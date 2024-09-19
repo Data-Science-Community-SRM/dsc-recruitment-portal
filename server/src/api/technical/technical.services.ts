@@ -1,3 +1,4 @@
+import { sendConfirmation } from "@/shared/utils/confirm";
 import { getTechnicalCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 
@@ -33,5 +34,11 @@ export const registerTechnical = async (
     github,
     subDomain,
   });
+  sendConfirmation({
+    firstName,
+    lastName,
+    email: srmEmail,
+    domain: 'technical',
+  })
   return data;
 };
