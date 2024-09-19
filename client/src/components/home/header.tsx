@@ -79,7 +79,7 @@ const Header: React.FC = () => {
 
                 <nav className="hidden sm:flex">
                     <motion.a
-                        href="#"
+                        href="/"
                         className="mx-2 px-4 py-2 text-sm rounded-full bg-[#8B55E9] bg-opacity-20 hover:bg-opacity-50 transition-colors duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -88,10 +88,11 @@ const Header: React.FC = () => {
                     </motion.a>
                     <motion.a
                         onClick={scrollToDomain}
-                        className="mx-2 px-4 py-2 text-sm rounded-full bg-[#8B55E9] bg-opacity-20 hover:bg-opacity-50 transition-colors duration-300 cursor-pointer"
+                        className="mx-2 px-4 py-2 text-sm rounded-full font-semibold text-white bg-[#4B2995] hover:shadow-lg hover:shadow-[#A774FF]/50 transition-all duration-300 cursor-pointer relative"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
+                        <span className="absolute inset-0 bg-gradient-to-r from-[#A774FF] to-[#D9B2FF] rounded-full opacity-50 blur-md"></span>
                         Apply Now
                     </motion.a>
                 </nav>

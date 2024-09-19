@@ -52,7 +52,7 @@ const Home: React.FC = () => {
                 Data Science Community Recruitments
             </title>
             <Header />
-            <main className="container mx-auto px-4 py-8">
+            <main className="container mx-auto px-4 py-8 flex flex-col">
                 <motion.h1
                     initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -65,15 +65,15 @@ const Home: React.FC = () => {
                     className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 text-center"
                 >
                 </motion.h1>
-                <Introduction />
+                <section id="home" className="flex-grow">
+                    <Introduction />
+                </section>
                 <History />
                 <section id="domain">
                     <div className="mt-36">
                         <Domain/>
                     </div>
-
                 </section>
-
                 <Hero/>
             </main>
             <Footer/>
