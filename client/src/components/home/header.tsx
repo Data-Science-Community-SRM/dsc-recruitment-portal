@@ -13,7 +13,7 @@ const Header: React.FC = () => {
     };
 
     const navigateHome = () => {
-        window.location.href = '/';  // Navigate to home page
+        window.location.href = '/';  // N
     };
 
     return (

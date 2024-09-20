@@ -6,7 +6,7 @@ import Hero from './s_k.png';
 const SkillsImage: React.FC = () => {
     return (
         <motion.section
-            className="flex flex-col justify-center items-center py-8 sm:py-12 md:py-16 lg:py-24 space-y-10"
+            className="flex flex-col justify-center items-center py-8 sm:py-12 md:py-16 lg:py-24 space-y-10 w-full overflow-hidden"
             initial={{ opacity: 0, scale: 0.7, rotate: -5 }}
             animate={{
                 opacity: 1,
@@ -45,10 +45,9 @@ const SkillsImage: React.FC = () => {
                     alt="Cross-Functional Team Skills"
                     width={1600}
                     height={1800}
-                    className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl"
+                    className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl object-contain"
                 />
             </motion.div>
-
         </motion.section>
     );
 };
