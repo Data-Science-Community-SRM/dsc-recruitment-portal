@@ -1,0 +1,17 @@
+Dear {{=it.firstName}},
+
+Thank you for taking the first step toward an exciting journey with the Data Science Community SRM! We’re thrilled that you’ve applied and are eager to learn more about your unique skills and potential.
+
+At Data Science Community SRM, we believe in empowering individuals to grow, innovate, and excel in the world of data science. Whether you're just starting or already have experience, you’ve made a fantastic choice to join a community that values learning, collaboration, and personal development.
+
+What’s Next? Our team is currently reviewing applications. We will reach out to you soon with the next steps in the selection process. Stay tuned for updates!
+
+In the meantime, we invite you to explore more about us and what we do by visiting our website: Data Science Community SRM. You can also follow us on our social media channels for the latest news and insights.
+
+Thank you once again for your interest. We’re excited to see how you can contribute to our thriving community!
+
+If you have any questions, feel free to reach out at [email address].
+
+Best Regards,
+Data Science Community SRM
+https://www.dscommunity.in
