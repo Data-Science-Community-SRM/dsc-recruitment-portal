@@ -32,13 +32,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             const currentPath = window.location.pathname.toLowerCase();
             const domainTitle = domain.title.toLowerCase();
 
-            // Only for use using the debug timings
-            console.log("Current Path: ", currentPath);
-            console.log("Domain Title: ", domainTitle);
-
-
             if (currentPath.includes(domainTitle)) {
-                console.log(`Path matches domain ${domain.title}, showing form.`);
                 setShowForm(true);
             }
         }
