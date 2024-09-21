@@ -40,7 +40,7 @@ export const registerCorporate = async (
     email: srmEmail,
     domain: 'corporate',
   })
-  await updateSheet('Technical', {
+  await updateSheet('Corporate', {
     id: data.insertedId,
     subDomain,
     firstName,

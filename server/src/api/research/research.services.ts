@@ -41,7 +41,7 @@ export const registerResearch = async (
     email: srmEmail,
     domain: "research",
   })
-  await updateSheet('Technical', {
+  await updateSheet('Research', {
     id: data.insertedId,
     firstName,
     lastName,

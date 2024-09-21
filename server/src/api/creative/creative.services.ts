@@ -40,7 +40,7 @@ export const registerCreative = async (
     email: srmEmail,
     domain: 'creative',
   })
-  await updateSheet('Technical', {
+  await updateSheet('Creative', {
     id: data.insertedId,
     subDomain,
     firstName,
