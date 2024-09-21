@@ -1,6 +1,7 @@
-import { sendConfirmation } from "@/shared/utils/confirm";
+import { sendConfirmation } from "../../shared/utils/confirm";
 import { getCorporateCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
+import { updateSheet } from "../../shared/utils/sheets";
 
 export const registerCorporate = async (
   firstName: string,
@@ -38,6 +39,18 @@ export const registerCorporate = async (
     lastName,
     email: srmEmail,
     domain: 'corporate',
+  })
+  await updateSheet('Corporate', {
+    id: data.insertedId,
+    subDomain,
+    firstName,
+    lastName,
+    year,
+    registrationNumber,
+    department,
+    srmEmail,
+    personalEmail,
+    phoneNumber,
   })
   return data;
 };

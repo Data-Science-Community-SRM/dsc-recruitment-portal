@@ -13,4 +13,9 @@ export default {
     prefix: "/api",
   },
   mailersend_api: process.env.MAILER_SEND_API_KEY!,
+  sheets: {
+    id: process.env.GSHEET_ID!,
+    key_url: process.env.SHEETS_KEY_URL!,
+    key_path: process.env.KEY_PATH!,
+  },
 };

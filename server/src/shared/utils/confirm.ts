@@ -47,6 +47,5 @@ export const sendConfirmation = async (user: props) => {
     .setHtml(htmlContent)
     .setText(textContent);
 
-  const res = await mailerSend.email.send(emailParams);
-  console.log(res)
+  await mailerSend.email.send(emailParams);
 };
