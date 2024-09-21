@@ -76,10 +76,10 @@ const DomainCard: React.FC<DomainCardProps> = ({
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>
         </motion.div>
         <div className="text-center sm:text-left flex flex-col sm:block">
-            <h3 className="text-white text-lg sm:text-xl font-semibold">
+            <h3 className="text-white text-lg sm:text-xl font-semibold mb-1">
                 {domain.title}
             </h3>
-            <p className="text-purple-300 text-xs sm:text-sm">
+            <p className="text-purple-300 text-xs sm:text-sm mt-1">
                 {domain.description}
             </p>
             <div className="sm:mt-4">
@@ -89,16 +89,24 @@ const DomainCard: React.FC<DomainCardProps> = ({
     </motion.div>
 );
 
+
 const Button: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     <motion.button
-        whileHover={{ scale: 1.05, backgroundColor: '#3B0764' }}
+        whileHover={{
+            scale: 1.05,
+            boxShadow: '0px 0px 15px 5px rgba(128, 90, 213, 0.7)',
+            background: 'linear-gradient(135deg, #2A004C, #3B0764)'
+        }}
         whileTap={{ scale: 0.95 }}
-        className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 bg-purple-900 text-white rounded-md text-xs sm:text-sm transition-colors duration-300"
+        className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 text-white rounded-md text-xs sm:text-sm transition-all duration-500
+                   bg-gradient-to-br from-[#1A0033] to-[#2B0054] shadow-lg shadow-purple-900/40"
         onClick={onClick}
     >
         APPLY NOW
     </motion.button>
 );
+
+
 
 const DomainsComponent = () => {
     const [selectedDomain, setSelectedDomain] = useState<Domain | null>(null);

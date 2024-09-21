@@ -1,5 +1,5 @@
 "use client";
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -26,6 +26,24 @@ const Lightbox: React.FC<LightboxProps> = ({
                                                showForm,
                                                setShowForm,
                                            }) => {
+
+    useEffect(() => {
+        if (domain) {
+            const currentPath = window.location.pathname.toLowerCase();
+            const domainTitle = domain.title.toLowerCase();
+
+            // Only for use using the debug timings
+            console.log("Current Path: ", currentPath);
+            console.log("Domain Title: ", domainTitle);
+
+
+            if (currentPath.includes(domainTitle)) {
+                console.log(`Path matches domain ${domain.title}, showing form.`);
+                setShowForm(true);
+            }
+        }
+    }, [domain, setShowForm]);
+
     if (!domain) return null;
 
     const containerVariants = {
@@ -42,12 +60,12 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-70"
+            className="fixed inset-0 z-[1001] flex items-center justify-center bg-black bg-opacity-70"
             variants={containerVariants}
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            transition={{duration: 0.4, ease: 'easeInOut'}}
         >
             <motion.div
                 className={`relative bg-gradient-to-br from-purple-950 to-purple-900 rounded-lg shadow-lg w-[90vw] max-w-lg ${
@@ -57,10 +75,10 @@ const Lightbox: React.FC<LightboxProps> = ({
                 animate="animate"
                 exit="exit"
                 layout
-                transition={{ layout: { duration: 0.6, ease: 'easeInOut' } }}
+                transition={{layout: {duration: 0.6, ease: 'easeInOut'}}}
             >
                 <AiOutlineClose
-                    className="absolute top-4 right-4 text-white cursor-pointer text-2xl" // Increased icon size here
+                    className="absolute top-4 right-4 text-white cursor-pointer text-2xl"
                     onClick={onClose}
                 />
 
@@ -74,7 +92,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <h2 className="text-white text-xl font-semibold mb-2">
                     {domain.title}
                 </h2>
-                <p className="text-purple-300 text-sm mb-4 px-6">{domain.description}</p> {/* Added padding (px-6) here */}
+                <p className="text-purple-300 text-sm mb-4 px-6">{domain.description}</p>
 
                 <div className="flex justify-center items-center gap-4 p-4">
                     <AnimatePresence mode="wait">
@@ -85,21 +103,21 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 animate="animate"
                                 exit="exit"
                                 variants={contentVariants}
-                                transition={{ duration: 0.4, ease: 'easeOut' }}
+                                transition={{duration: 0.4, ease: 'easeOut'}}
                                 className="flex space-x-4"
-                                style={{ minHeight: "35px" }}
+                                style={{minHeight: "35px"}}
                             >
                                 <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
+                                    whileHover={{scale: 1.05}}
+                                    whileTap={{scale: 0.95}}
                                     className="bg-purple-900 text-white py-1 px-3 rounded-md text-sm"
                                     onClick={() => setShowForm(true)}
                                 >
                                     APPLY
                                 </motion.button>
                                 <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
+                                    whileHover={{scale: 1.05}}
+                                    whileTap={{scale: 0.95}}
                                     className="bg-purple-800 text-white py-1 px-3 rounded-md text-sm"
                                     onClick={() =>
                                         (window.location.href = `/${domain.title.toLowerCase()}`)
@@ -115,9 +133,9 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 animate="animate"
                                 exit="exit"
                                 variants={contentVariants}
-                                transition={{ duration: 0.4, ease: 'easeOut' }}
+                                transition={{duration: 0.4, ease: 'easeOut'}}
                                 className="w-full"
-                                style={{ minHeight: "50vh" }}
+                                style={{minHeight: "50vh"}}
                             >
                                 <Form
                                     includeGithub={true}
@@ -131,6 +149,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 </div>
             </motion.div>
         </motion.div>
+
     );
 };
 
