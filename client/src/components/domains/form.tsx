@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import { useRouter } from 'next/navigation';
+import {usePathname } from 'next/navigation';
+
 
 export default function Form({
                                includeGithub,
@@ -25,10 +26,9 @@ export default function Form({
   const [github, setGithub] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [subDomain, setSubDomain] = useState(subdomains[0]);
+  const pathname = usePathname();
 
-  const router = useRouter();
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (
         !firstname ||
@@ -45,7 +45,7 @@ export default function Form({
       return;
     }
 
-    const domain = domainProp || router.pathname.split('/')[2] || "";
+    const domain = domainProp || pathname.split('/')[2] || "";
 
     const data = {
       firstName: firstname,
@@ -63,7 +63,7 @@ export default function Form({
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/${domain}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${domain}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

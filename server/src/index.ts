@@ -1,11 +1,9 @@
 import express from 'express';
 import Loaders from './loaders';
 import config from './config';
-import cors from 'cors';
 
 async function startServer() {
   const app = express();
-  app.use(cors());
   await Loaders({ expressApp: app });
   app
     .listen(config.port, () => {
