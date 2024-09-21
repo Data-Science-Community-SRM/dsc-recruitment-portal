@@ -1,4 +1,4 @@
-import { toTitleCase } from "@/shared/utils/titleCase";
+import { toTitleCase } from "../../shared/utils/titleCase";
 import { z } from "zod";
 
 export const ResearchSchema = z.object({

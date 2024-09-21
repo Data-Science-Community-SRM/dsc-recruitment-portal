@@ -1,7 +1,7 @@
-import { sendConfirmation } from "@/shared/utils/confirm";
+import { sendConfirmation } from "../../shared/utils/confirm";
 import { getCreativeCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
-import { updateSheet } from "@/shared/utils/sheets";
+import { updateSheet } from "../../shared/utils/sheets";
 
 export const registerCreative = async (
   firstName: string,
