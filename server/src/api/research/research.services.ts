@@ -1,6 +1,7 @@
 import { sendConfirmation } from "@/shared/utils/confirm";
 import { getResearchCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
+import { updateSheet } from "@/shared/utils/sheets";
 
 export const registerResearch = async (
   firstName: string,
@@ -22,7 +23,7 @@ export const registerResearch = async (
     };
   }
 
-  const result = await collection.insertOne({
+  const data = await collection.insertOne({
     firstName,
     lastName,
     srmEmail,
@@ -40,5 +41,17 @@ export const registerResearch = async (
     email: srmEmail,
     domain: "research",
   })
-  return result;
+  await updateSheet('Technical', {
+    id: data.insertedId,
+    firstName,
+    lastName,
+    year,
+    registrationNumber,
+    department,
+    srmEmail,
+    personalEmail,
+    phoneNumber,
+    github,
+  })
+  return data;
 };
