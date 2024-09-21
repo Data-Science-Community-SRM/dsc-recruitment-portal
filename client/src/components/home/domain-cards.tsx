@@ -69,20 +69,22 @@ const DomainCard: React.FC<DomainCardProps> = ({
             <Image
                 src={domain.image}
                 alt={domain.title}
-                width={24}
-                height={24}
+                width={100}
+                height={100}
                 className="z-10"
             />
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-md"></div>
         </motion.div>
-        <div className="text-center sm:text-left">
+        <div className="text-center sm:text-left flex flex-col sm:block">
             <h3 className="text-white text-lg sm:text-xl font-semibold">
                 {domain.title}
             </h3>
             <p className="text-purple-300 text-xs sm:text-sm">
                 {domain.description}
             </p>
-            <Button onClick={() => onLearnMoreClick(domain)} />
+            <div className="sm:mt-4">
+                <Button onClick={() => onLearnMoreClick(domain)} />
+            </div>
         </div>
     </motion.div>
 );

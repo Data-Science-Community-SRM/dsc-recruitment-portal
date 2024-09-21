@@ -60,7 +60,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 transition={{ layout: { duration: 0.6, ease: 'easeInOut' } }}
             >
                 <AiOutlineClose
-                    className="absolute top-4 right-4 text-white cursor-pointer text-xl"
+                    className="absolute top-4 right-4 text-white cursor-pointer text-2xl" // Increased icon size here
                     onClick={onClose}
                 />
 
@@ -74,7 +74,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <h2 className="text-white text-xl font-semibold mb-2">
                     {domain.title}
                 </h2>
-                <p className="text-purple-300 text-sm mb-4">{domain.description}</p>
+                <p className="text-purple-300 text-sm mb-4 px-6">{domain.description}</p> {/* Added padding (px-6) here */}
 
                 <div className="flex justify-center items-center gap-4 p-4">
                     <AnimatePresence mode="wait">
