@@ -90,10 +90,9 @@ const Header: React.FC = () => {
     return (
         <header className="p-4 bg-[#1A0B2E] text-white relative z-10">
             <div className="flex justify-between items-center">
-                {/* Logo and Text */}
                 <div className="flex items-center cursor-pointer" onClick={navigateHome}>
                     <motion.div
-                        className="w-12 h-12 mr-4"
+                        className="w-10 h-10 mr-4"
                         initial={{opacity: 0, scale: 0.8}}
                         animate={{opacity: 1, scale: 1}}
                         transition={{duration: 0.8, delay: 0.1}}
@@ -129,12 +128,12 @@ const Header: React.FC = () => {
                 </div>
                 <motion.a
                     onClick={handleApplyNowClick}
-                    className="relative sm:mx-2 px-6 py-3 text-md md:text-lg lg:text-xl rounded-full font-semibold text-white bg-gradient-to-r from-[#D16BA5] to-[#5D3FD3] hover:from-[#B44AC6] hover:to-[#3F26A5] transition-all duration-500 ease-out cursor-pointer overflow-hidden"
+                    className="relative sm:mx-2 px-5 py-2.5 text-sm md:text-lg lg:text-xl rounded-full font-semibold text-white bg-gradient-to-r from-[#D16BA5] to-[#5D3FD3] hover:from-[#B44AC6] hover:to-[#3F26A5] transition-all duration-500 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
                     whileHover={{scale: 1.1, transition: {duration: 0.1}}}
                     whileTap={{scale: 0.95}}
                 >
-                    <span
-                        className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out blur-sm animate-shimmer"></span>
+    <span
+        className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out blur-sm animate-shimmer"></span>
                     <span
                         className="absolute inset-0 bg-gradient-to-r from-[#AA42D4] to-[#5B2EC1] rounded-full opacity-60 blur-xl"></span>
                     <span className="relative z-10">Apply Now</span>
@@ -144,6 +143,7 @@ const Header: React.FC = () => {
                         transition={{repeat: Infinity, duration: 2, ease: "easeInOut"}}
                     />
                 </motion.a>
+
 
             </div>
             <Lightbox
