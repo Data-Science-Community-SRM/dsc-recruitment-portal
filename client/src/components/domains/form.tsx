@@ -46,7 +46,7 @@ export default function Form({
         !phoneNumber ||
         !department ||
         !year ||
-        (includeGithub && !github) ||
+        (domainProp == 'Technical' || domainProp == 'Research') ||
         !subDomain
       ) {
         setError("Please fill all the fields.");
@@ -204,7 +204,7 @@ export default function Form({
             />
           </LabelInputContainer>
         </div>
-        {includeGithub && (
+        {(domainProp == 'Technical' || domainProp == 'Research')  && (
           <LabelInputContainer className="mb-4">
             <Input
               id="github"
