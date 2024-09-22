@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const History: React.FC = () => {
     const [displayText, setDisplayText] = useState('');
-    const text = "Thriving since 2019";
+    const text = "We Are Recruiting!!";
 
     useEffect(() => {
         let index = 0;

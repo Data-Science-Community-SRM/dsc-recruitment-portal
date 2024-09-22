@@ -99,7 +99,7 @@ const Button: React.FC<{ onClick: () => void }> = ({ onClick }) => (
         }}
         whileTap={{ scale: 0.95 }}
         className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 text-white rounded-md text-xs sm:text-sm transition-all duration-500
-                   bg-gradient-to-br from-[#1A0033] to-[#2B0054] shadow-lg shadow-purple-900/40"
+                   bg-gradient-to-br from-purple-600 to-[#2B0054] shadow-lg shadow-purple-900/40"
         onClick={onClick}
     >
         APPLY NOW
