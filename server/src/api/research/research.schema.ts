@@ -9,6 +9,6 @@ export const ResearchSchema = z.object({
   registrationNumber: z.string().trim().toUpperCase(),
   phoneNumber: z.string(),
   department: z.string().trim(),
-  year: z.string(),
+  year: z.number(),
   github: z.string().url(),
 });
