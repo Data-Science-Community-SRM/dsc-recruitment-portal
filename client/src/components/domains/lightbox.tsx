@@ -93,45 +93,45 @@ const Lightbox: React.FC<LightboxProps> = ({
         <div className="flex justify-center items-center gap-4 p-4">
           <AnimatePresence mode="wait">
             {!showForm ? (
-              <motion.div
-                key="buttons"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={contentVariants}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="flex space-x-4"
-                style={{ minHeight: "35px" }}
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-purple-900 text-white py-1 px-3 rounded-md text-sm"
-                  onClick={() => setShowForm(true)}
+                <motion.div
+                    key="buttons"
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={contentVariants}
+                    transition={{duration: 0.4, ease: "easeOut"}}
+                    className="flex space-x-4"
+                    style={{minHeight: "35px"}}
                 >
-                  APPLY
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-purple-800 text-white py-1 px-3 rounded-md text-sm"
-                  onClick={() =>
-                    (window.location.href = `/${domain.title.toLowerCase()}`)
-                  }
-                >
-                  LEARN MORE
-                </motion.button>
-              </motion.div>
+                  <motion.button
+                      whileHover={{scale: 1.05}}
+                      whileTap={{scale: 0.95}}
+                      className="bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white py-2 px-6 rounded-lg text-sm shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
+                      onClick={() => setShowForm(true)}
+                  >
+                    APPLY
+                  </motion.button>
+                  <motion.button
+                      whileHover={{scale: 1.05}}
+                      whileTap={{scale: 0.95}}
+                      className="bg-purple-800 text-white py-1 px-3 rounded-md text-sm"
+                      onClick={() =>
+                          (window.location.href = `/${domain.title.toLowerCase()}`)
+                      }
+                  >
+                    LEARN MORE
+                  </motion.button>
+                </motion.div>
             ) : (
-              <motion.div
-                key="form"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={contentVariants}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full"
-                style={{ minHeight: "50vh" }}
+                <motion.div
+                    key="form"
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={contentVariants}
+                    transition={{duration: 0.4, ease: "easeOut"}}
+                    className="w-full"
+                    style={{ minHeight: "50vh" }}
               >
                 <Form
                   setShowForm={setShowForm}
