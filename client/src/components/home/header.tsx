@@ -129,7 +129,7 @@ const Header: React.FC = () => {
                 </div>
                 <motion.a
                     onClick={handleApplyNowClick}
-                    className="relative sm:mx-2 px-8 py-3 text-md md:text-lg lg:text-xl rounded-full font-semibold text-white bg-gradient-to-r from-[#D16BA5] to-[#5D3FD3] hover:from-[#B44AC6] hover:to-[#3F26A5] transition-all duration-500 ease-out cursor-pointer overflow-hidden"
+                    className="relative sm:mx-2 px-6 py-3 text-md md:text-lg lg:text-xl rounded-full font-semibold text-white bg-gradient-to-r from-[#D16BA5] to-[#5D3FD3] hover:from-[#B44AC6] hover:to-[#3F26A5] transition-all duration-500 ease-out cursor-pointer overflow-hidden"
                     whileHover={{scale: 1.1, transition: {duration: 0.1}}}
                     whileTap={{scale: 0.95}}
                 >
