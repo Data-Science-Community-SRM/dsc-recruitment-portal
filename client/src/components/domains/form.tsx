@@ -7,11 +7,9 @@ import { register } from "@/lib/submitAction";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Form({
-  includeGithub,
   subdomains,
   domain: domainProp,
 }: {
-  includeGithub: boolean;
   subdomains: string[];
   description: string;
   domain?: string;
