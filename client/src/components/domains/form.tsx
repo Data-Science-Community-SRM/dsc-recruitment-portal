@@ -7,9 +7,13 @@ import { register } from "@/lib/submitAction";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Form({
+  setShowForm,
+  setDomainDescription,
   subdomains,
   domain: domainProp,
 }: {
+  setShowForm: (showForm: boolean) => void;
+  setDomainDescription: (description: string) => void;
   subdomains: string[];
   description: string;
   domain?: string;
@@ -44,7 +48,7 @@ export default function Form({
         !phoneNumber ||
         !department ||
         !year ||
-        (domainProp == 'Technical' || domainProp == 'Research') ||
+        ((domainProp == 'Technical' || domainProp == 'Research') && !github) ||
         !subDomain
       ) {
         setError("Please fill all the fields.");
@@ -81,6 +85,8 @@ export default function Form({
         setYear("");
         setGithub("");
         setSubDomain(subdomains[0]);
+        setDomainDescription("Thank you for registering! You will receive an email shortly.");
+        setShowForm(false);
       } else {
         throw new Error(
           `Registration failed: ${

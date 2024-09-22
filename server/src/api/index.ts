@@ -9,7 +9,7 @@ export default (): Router => {
     app.use('/test', testRouter());
     app.use('/technical', technicalRouter());
     app.use('/corporate', corporateRouter());
-    app.use("/creative", creativeRouter());
+    app.use("/creatives", creativeRouter());
     app.use("/research", researchRouter());
     return app;
 };
