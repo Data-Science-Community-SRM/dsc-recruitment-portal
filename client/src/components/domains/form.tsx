@@ -86,7 +86,8 @@ export default function Form({
       } else {
         throw new Error(
           `Registration failed: ${
-            responseData?.message?.error_description || responseData.error.issues[0].message
+            responseData?.message?.error_description ||
+            responseData.error.issues[0].message
           }`
         );
       }
@@ -118,6 +119,7 @@ export default function Form({
               className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               required
               onChange={(e) => setFirstName(e.target.value)}
+              value={firstname}
             />
           </LabelInputContainer>
           <LabelInputContainer>
@@ -128,6 +130,7 @@ export default function Form({
               className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               required
               onChange={(e) => setLastName(e.target.value)}
+              value={lastname}
             />
           </LabelInputContainer>
         </div>
@@ -138,6 +141,7 @@ export default function Form({
             type="text"
             className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             required
+            value={registrationNumber}
             onChange={(e) => setRegistrationNumber(e.target.value)}
           />
         </LabelInputContainer>
@@ -148,16 +152,18 @@ export default function Form({
             type="email"
             className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             required
+            value={srmEmail}
             onChange={(e) => setSrmEmail(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Input
             id="personalEmail"
-            placeholder="Email"
+            placeholder="Personal Email ID"
             type="email"
             className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             required
+            value={personalEmail}
             onChange={(e) => setPersonalEmail(e.target.value)}
           />
         </LabelInputContainer>
@@ -168,6 +174,7 @@ export default function Form({
             type="tel"
             className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
             required
+            value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </LabelInputContainer>
@@ -179,6 +186,7 @@ export default function Form({
               type="text"
               required
               className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
+              value={department}
               onChange={(e) => setDepartment(e.target.value)}
             />
           </LabelInputContainer>
@@ -190,6 +198,7 @@ export default function Form({
               min={1}
               max={3}
               required
+              value={year}
               className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               onChange={(e) => setYear(e.target.value)}
             />
@@ -203,6 +212,7 @@ export default function Form({
               type="url"
               className="bg-[#11071f] text-white placeholder-gray-400 rounded-md"
               required
+              value={github}
               onChange={(e) => setGithub(e.target.value)}
             />
           </LabelInputContainer>
