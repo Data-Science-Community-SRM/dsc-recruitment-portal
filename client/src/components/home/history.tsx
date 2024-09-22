@@ -52,13 +52,14 @@ const History: React.FC = () => {
                         |
                     </motion.span>
                 </motion.h2>
-                <motion.p
-                    className="text-base lg:text-lg xl:text-xl text-gray-400 mt-4 mx-auto max-w-6xl text-left"
-                    variants={paragraphVariants}
-                >
-                    We are a technology-driven Data Science-based student-led Innovation community at SRMIST.
-                    Our aim is to foster development and entrepreneurial skills among students and work as a community that inspires thousands.
-                </motion.p>
+                    <motion.p
+        className="text-base lg:text-lg xl:text-xl text-gray-400 mt-4 mx-auto max-w-6xl text-center"
+        variants={paragraphVariants}
+    >
+        We are a technology-driven, Data Science-based, student-led innovation community at SRMIST.
+        Our aim is to foster development and entrepreneurial skills among students and work as a community that inspires thousands.
+    </motion.p>
+
             </motion.div>
         </motion.section>
     );
