@@ -94,18 +94,30 @@ const Button: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     <motion.button
         whileHover={{
             scale: 1.05,
-            boxShadow: '0px 0px 15px 5px rgba(128, 90, 213, 0.7)',
-            background: 'linear-gradient(135deg, #2A004C, #3B0764)'
+            boxShadow: '0px 0px 15px 5px rgba(173, 128, 255, 0.6)',
+            background: 'linear-gradient(135deg, rgba(100, 42, 139, 0.9), rgba(141, 64, 180, 0.9))',
+        }}
+        animate={{
+            background: [
+                'linear-gradient(135deg, rgba(140, 0, 255, 0.6), rgba(200, 100, 255, 0.6))',
+                'linear-gradient(135deg, rgba(173, 128, 255, 0.6), rgba(255, 150, 255, 0.6))',
+            ],
+        }}
+        transition={{
+            duration: 3,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'reverse',
         }}
         whileTap={{ scale: 0.95 }}
-        className="mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 text-white rounded-md text-xs sm:text-sm transition-all duration-500
-                   bg-gradient-to-br from-[#1A0033] to-[#2B0054] shadow-lg shadow-purple-900/40"
+        className="relative mt-2 sm:mt-4 px-3 sm:px-4 py-1 sm:py-2 text-white rounded-md text-xs sm:text-sm transition-all duration-500
+                   bg-gradient-to-br from-[#14002A] to-[#20003D] shadow-lg shadow-purple-900/60"
         onClick={onClick}
     >
         APPLY NOW
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-400 opacity-30 rounded-md blur-md pointer-events-none"></div>
     </motion.button>
 );
-
 
 
 const DomainsComponent = () => {
