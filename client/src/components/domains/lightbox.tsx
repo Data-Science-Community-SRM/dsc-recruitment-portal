@@ -104,11 +104,12 @@ const Lightbox: React.FC<LightboxProps> = ({
                                 <motion.button
                                     whileHover={{scale: 1.05}}
                                     whileTap={{scale: 0.95}}
-                                    className="bg-purple-900 text-white py-1 px-3 rounded-md text-sm"
+                                    className="bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white py-2 px-6 rounded-lg text-sm shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
                                     onClick={() => setShowForm(true)}
                                 >
                                     APPLY
                                 </motion.button>
+
                                 <motion.button
                                     whileHover={{scale: 1.05}}
                                     whileTap={{scale: 0.95}}
