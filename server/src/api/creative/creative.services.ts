@@ -2,6 +2,7 @@ import { sendConfirmation } from "../../shared/utils/confirm";
 import { getCreativeCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 import { updateSheet } from "../../shared/utils/sheets";
+import config from "../../config";
 
 export const registerCreative = async (
   firstName: string,
@@ -39,6 +40,7 @@ export const registerCreative = async (
     lastName,
     email: srmEmail,
     domain: 'creative',
+    whatsapp: config.whatsapp.creative,
   })
   await updateSheet('Creative', {
     id: data.insertedId,

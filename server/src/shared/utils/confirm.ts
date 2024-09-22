@@ -13,6 +13,7 @@ interface props {
   lastName: string;
   email: string;
   domain: string;
+  whatsapp: string;
 }
 
 const toTitleCase = (str: string) => {
@@ -46,6 +47,5 @@ export const sendConfirmation = async (user: props) => {
     .setSubject(subject)
     .setHtml(htmlContent)
     .setText(textContent);
-
   await mailerSend.email.send(emailParams);
 };

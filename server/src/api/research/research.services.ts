@@ -2,6 +2,7 @@ import { sendConfirmation } from "../../shared/utils/confirm";
 import { getResearchCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 import { updateSheet } from "../../shared/utils/sheets";
+import config from "../../config";
 
 export const registerResearch = async (
   firstName: string,
@@ -40,6 +41,7 @@ export const registerResearch = async (
     lastName,
     email: srmEmail,
     domain: "research",
+    whatsapp: config.whatsapp.research,
   })
   await updateSheet('Research', {
     id: data.insertedId,

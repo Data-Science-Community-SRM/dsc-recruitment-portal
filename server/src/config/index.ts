@@ -18,4 +18,10 @@ export default {
     key_url: process.env.SHEETS_KEY_URL!,
     key_path: process.env.KEY_PATH!,
   },
+  whatsapp: {
+    technical: process.env.TECHNICAL_WHATSAPP!,
+    creative: process.env.CREATIVE_WHATSAPP!,
+    corporate: process.env.CORPORATE_WHATSAPP!,
+    research: process.env.RESEARCH_WHATSAPP!,
+  }
 };

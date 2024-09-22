@@ -2,6 +2,7 @@ import { sendConfirmation } from "../../shared/utils/confirm";
 import { getCorporateCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 import { updateSheet } from "../../shared/utils/sheets";
+import config from "../../config";
 
 export const registerCorporate = async (
   firstName: string,
@@ -12,7 +13,7 @@ export const registerCorporate = async (
   phoneNumber: string,
   department: string,
   year: number,
-  subDomain: string,
+  subDomain: string
 ) => {
   const collection = await getCorporateCollection();
   const student = await collection.findOne({ registrationNumber });
@@ -33,14 +34,15 @@ export const registerCorporate = async (
     year,
     subDomain,
   });
-  
+
   sendConfirmation({
     firstName,
     lastName,
     email: srmEmail,
-    domain: 'corporate',
-  })
-  await updateSheet('Corporate', {
+    domain: "corporate",
+    whatsapp: config.whatsapp.corporate,
+  });
+  await updateSheet("Corporate", {
     id: data.insertedId,
     subDomain,
     firstName,
@@ -51,6 +53,6 @@ export const registerCorporate = async (
     srmEmail,
     personalEmail,
     phoneNumber,
-  })
+  });
   return data;
 };

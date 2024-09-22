@@ -2,6 +2,7 @@ import { sendConfirmation } from "../../shared/utils/confirm";
 import { getTechnicalCollection } from "../../loaders/collections";
 import ERRORS from "../../shared/errors";
 import { updateSheet } from "../../shared/utils/sheets";
+import config from "../../config";
 
 export const registerTechnical = async (
   firstName: string,
@@ -40,6 +41,7 @@ export const registerTechnical = async (
     lastName,
     email: srmEmail,
     domain: 'technical',
+    whatsapp: config.whatsapp.technical,
   })
   await updateSheet('Technical', {
     id: data.insertedId,

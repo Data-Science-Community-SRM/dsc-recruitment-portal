@@ -6,7 +6,10 @@ At Data Science Community SRM, we believe in empowering individuals to grow, inn
 
 What’s Next? Our team is currently reviewing applications. We will reach out to you soon with the next steps in the selection process. Stay tuned for updates!
 
-In the meantime, we invite you to explore more about us and what we do by visiting our website: Data Science Community SRM. You can also follow us on our social media channels for the latest news and insights.
+In the meantime, we invite you to explore more about us and what we do by visiting our website: Data Science Community SRM. Join our whatsapp recruitment group to get further updates. 
+Whatsapp Invite: {{=it.whatsapp}}
+
+You can also follow us on our social media channels for the latest news and insights.
 
 Thank you once again for your interest. We’re excited to see how you can contribute to our thriving community!
 
